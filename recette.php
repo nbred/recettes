@@ -60,8 +60,7 @@ if ($uploadOk == 0) {
                         <object data="<?php echo $target_file; ?>" type="application/pdf">
                             <p>
                                 Your browser does not support embedded PDF files.<br>
-                                    <a href="test.pdf">Click here to
-                                        download the PDF file.</a>
+                                    <a href="<?php echo $target_file; ?>">Click here to download the PDF file.</a>
                             </p>
                         </object>
                     </div>
@@ -70,6 +69,12 @@ if ($uploadOk == 0) {
                     <div class="media-body">
                         <h3 class="mt-0"><?php echo $_POST["recette"] ?></h3>
                         <p><?php echo $_POST["motscles"] ?></p>
+                    </div>
+                    <div class="fixed-bottom">
+                        <form action="toDB.php" method="post" enctype="application/x-www-form-urlencoded" name="todb">
+                            <input type="submit" name="addToDb" id="addToDb" value="Save">                   
+                            </input>
+                        </form>
                     </div>
                 </div>
             </div>
